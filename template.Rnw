@@ -49,7 +49,7 @@ For this lab, you will
 \begin{enumerate}[1.]\itemsep0em
 \item Install R and RStudio
 \item Install tinytex (if necessary):\\
-install.packages("tinytex")
+\texttt{install.packages("tinytex")}
 \item Create a GitHub account here, and email me you username.
 \item Install GitHub desktop.
 \item Accept the LAB 1 assignment here.
@@ -118,6 +118,76 @@ x &= x \tag{Dividing both sides by 9}
 The equality holds for any $x$.
 
 Note, I did a page break here so that the next section started on a clean page.
+\newpage
+
+\subsection{Running R Code}
+Code chunks can be entered into Sweave; e.g., here are some comments.
+<<size='scriptsize'>>=
+# R code goes here
+# Output is automatically printed in the pdf
+@
+Below, you can see that we can algebra with \texttt{R}.
+<<size='scriptsize'>>=
+8*(9-5) + 9 # 8(x-5) + x for x=9
+@
+Below, we show we can produce the code without evaluating it.
+<<eval=FALSE, size='scriptsize'>>=
+8*(9-5) + 9 # 8(x-5) + x for x=9
+@
+Alternatively, we can produce the output without the code.
+<<echo=FALSE, size='scriptsize'>>=
+8*(9-5) + 9 # 8(x-5) + x for x=9
+@
+We can also call object values from \texttt{R} directly.
+<<size='scriptsize'>>=
+result <- 8*(9-5) + 9   # 8(x-5) + x for x = 9
+result.with.error <- result + rnorm(1, mean = 0, sd = 0.1)
+result.with.error
+@
+The result is \Sexpr{result.with.error}. Note that I did not type the result, but I used the \verb|\Sexpr{}| command.
+
+\subsection{Plotting}
+We can also plot with \texttt{R}.
+<<plot1, eval=FALSE, size='scriptsize'>>=
+#Plot a histogram of random normally distributed data
+hist(rexp(100))
+@
+\begin{figure}[H]
+\begin{center}
+%This code is evaluated, but not printed
+%warning=FALSE and message=FALSE ensure no text is returned as a by product of
+%printing; this would cause an error in that plot+text is returned instead of
+%just the plot
+<<echo=FALSE, warning=FALSE, message=FALSE, fig.dim=c(5,3.5)>>=
+<<plot1>>
+@
+\caption{A histogram of random normally distributed data, $n=100$.}
+\label{plot1} %we can now reference plot1
+\end{center}
+\end{figure}
+
+\subsection{Tables}
+Below, we load and take a peek at some data about the death rate per 1000 in Virginia in 1940 (Molyneaux et al., 1947).
+<<size='scriptsize'>>=
+data(VADeaths)
+head(VADeaths) # Take a peek of the data
+@
+
+If we want to print this nicely, we can do so using the xtable package (Dahl et al., 2019), which we can reference using the label (Table \href{"VADeaths.tab"} 1)
+<<size='scriptsize'>>=
+library(xtable)
+sleep.table<-xtable(VADeaths ,
+                    label = "VADeaths.tab",
+                    caption = "Death Rates per 1000 in Virginia (1940).")
+@
+<<echo=FALSE, results='asis'>>=
+# placement="H" places table [H]ere, just like plot
+# include.rownames=FALSE doesn’t print the row numbers in this example
+print(sleep.table,
+table.placement = "H", include.rownames=FALSE, size = "small")
+@
+
+\section*{References}
 
 
 \section{Results}
