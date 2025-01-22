@@ -78,10 +78,10 @@
 \title{Lab 1 -- MATH 240 -- Computational Statistics}
 
 \author{
-  First Author \\
-  Affiliation  \\
-  Department  \\
-  {\tt email@domain}
+  Camilo Granada Cossio \\
+  Colgate University \\
+  Mathematics Department  \\
+  {\tt cgranadacossio@colgate.edu}
 }
 
 \date{}
@@ -113,7 +113,7 @@ each section.
 \end{enumerate}
 
 \textbf{Remark:} You will find the class Sweave cheatsheet to be
-\textit{incredibly} \verb|\emph{incredibly}| helpful.
+\textit{incredibly} (\verb|\emph{incredibly}|) helpful.
 
 \section{Word Processing Tasks}
 
@@ -217,11 +217,11 @@ We can also call object values from \texttt{R} directly.
 \hldef{result.with.error}
 \end{alltt}
 \begin{verbatim}
-## [1] 40.91967
+## [1] 41.0152
 \end{verbatim}
 \end{kframe}
 \end{knitrout}
-The result is 40.9196733. Note that I did not type the result, but I used the \verb|\Sexpr{}| command.
+The result is 41.0151989. Note that I did not type the result, but I used the \verb|\Sexpr{}| command.
 
 \subsection{Plotting}
 We can also plot with \texttt{R}.
@@ -267,7 +267,7 @@ Below, we load and take a peek at some data about the death rate per 1000 in Vir
 \end{kframe}
 \end{knitrout}
 
-If we want to print this nicely, we can do so using the xtable package (Dahl et al., 2019), which we can reference using the label (Table \href{"VADeaths.tab"} 1)
+If we want to print this nicely, we can do so using the xtable package \citep{xtable}, which we can reference using the label (Table \href{"VADeaths.tab"} 1)
 \begin{knitrout}\scriptsize
 \definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
 \begin{alltt}
@@ -279,7 +279,7 @@ If we want to print this nicely, we can do so using the xtable package (Dahl et 
 \end{kframe}
 \end{knitrout}
 % latex table generated in R 4.4.2 by xtable 1.8-4 package
-% Tue Jan 21 16:17:17 2025
+% Tue Jan 21 19:16:31 2025
 \begin{table}[H]
 \centering
 \begingroup\small
@@ -332,7 +332,7 @@ Residuals & 506.92 & 550.00 \\\hline
 \caption{ANOVA table for Case Study I.}
 \end{center}
 \end{table}
-The \texttt{palmerpenguins} package for \texttt{R} (Horst et al., 2020) provides data on adult foraging penguins near Palmer Station,
+The \texttt{palmerpenguins} package for \texttt{R} \cite{horst2022palmer} provides data on adult foraging penguins near Palmer Station,
 Antarctica. Figure \href{"penguins.pdf"} 2 is too big to fit nicely in our column-based-template above, so I’ve placed it here in the abstract by saving it and presenting it scaled to 0.75.
 
 \begin{knitrout}\scriptsize

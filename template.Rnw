@@ -27,10 +27,10 @@
 \title{Lab 1 -- MATH 240 -- Computational Statistics}
 
 \author{
-  First Author \\
-  Affiliation  \\
-  Department  \\
-  {\tt email@domain}
+  Camilo Granada Cossio \\
+  Colgate University \\
+  Mathematics Department  \\
+  {\tt cgranadacossio@colgate.edu}
 }
 
 \date{}
@@ -62,7 +62,7 @@ each section.
 \end{enumerate}
 
 \textbf{Remark:} You will find the class Sweave cheatsheet to be
-\textit{incredibly} \verb|\emph{incredibly}| helpful.
+\textit{incredibly} (\verb|\emph{incredibly}|) helpful.
 
 \section{Word Processing Tasks}
 
@@ -173,7 +173,7 @@ data(VADeaths)
 head(VADeaths) # Take a peek of the data
 @
 
-If we want to print this nicely, we can do so using the xtable package (Dahl et al., 2019), which we can reference using the label (Table \href{"VADeaths.tab"} 1)
+If we want to print this nicely, we can do so using the xtable package \citep{xtable}, which we can reference using the label (Table \href{"VADeaths.tab"} 1)
 <<size='scriptsize'>>=
 library(xtable)
 sleep.table<-xtable(VADeaths ,
@@ -219,7 +219,7 @@ Residuals & 506.92 & 550.00 \\\hline
 \caption{ANOVA table for Case Study I.}
 \end{center}
 \end{table}
-The \texttt{palmerpenguins} package for \texttt{R} (Horst et al., 2020) provides data on adult foraging penguins near Palmer Station,
+The \texttt{palmerpenguins} package for \texttt{R} \cite{horst2022palmer} provides data on adult foraging penguins near Palmer Station,
 Antarctica. Figure \href{"penguins.pdf"} 2 is too big to fit nicely in our column-based-template above, so I’ve placed it here in the abstract by saving it and presenting it scaled to 0.75.
 
 <<size='scriptsize',results='hide'>>=
